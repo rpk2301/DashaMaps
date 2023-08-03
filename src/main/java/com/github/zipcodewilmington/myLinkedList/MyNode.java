@@ -4,8 +4,8 @@ import java.util.Objects;
 
 public class MyNode {
 
-    MyPair data;
-    MyNode next;
+   private MyPair data;
+   private MyNode next;
 
 
     public MyNode(String key, Integer value)

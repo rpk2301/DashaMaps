@@ -15,7 +15,7 @@ public class MyLinkedList {
     public void add(String key, Integer value)
     {
     MyNode CurrentNode = head;
-    while(CurrentNode.next!=null)
+    while(CurrentNode.getNext()!=null)
     {
         CurrentNode = CurrentNode.getNext();
     }
@@ -27,7 +27,7 @@ public class MyLinkedList {
     {
         Integer count = 0;
         MyNode CurrentNode = head;
-        while(CurrentNode.next!=null)
+        while(CurrentNode.getNext()!=null)
         {
             CurrentNode = CurrentNode.getNext();
             count++;
@@ -39,13 +39,10 @@ public class MyLinkedList {
         if (head.getNext()==null)return true; else return false;
     }
 
-    public MyNode get(String key)
-    {
-    MyNode CurrentNode = head;
-        while(CurrentNode!=null)
-        {
-            if(CurrentNode.getData().getKey().equals(key))
-            {
+    public MyNode get(String key) {
+        MyNode CurrentNode = head;
+        while (CurrentNode != null) {
+            if (CurrentNode.getData().getKey().equals(key)) {
                 return CurrentNode;
             }
             CurrentNode = CurrentNode.getNext();
@@ -55,7 +52,22 @@ public class MyLinkedList {
 
 
 
+    public Integer remove (String key) {
+        MyNode previousNode = head;
+        MyNode CurrentNode = head.getNext();
+        while (CurrentNode != null && !CurrentNode.getData().getKey().equals(key))
+        {
+            previousNode = CurrentNode;
+            CurrentNode = CurrentNode.getNext();
+        }
+        if(CurrentNode == null)
+        {
+            return null;
+        }
+        previousNode.setNext(CurrentNode.getNext());
+        return CurrentNode.getData().getValue();
 
+    }
 
 
 }

@@ -12,7 +12,7 @@ class MyLinkedListTest {
         MyLinkedList list = new MyLinkedList("a");
         String expected = "brent";
         list.add(expected,3);
-        String actual =list.head.getNext().data.getKey();
+        String actual =list.head.getNext().getData().getKey();
         Assert.assertEquals(expected,actual);
     }
 
@@ -55,6 +55,23 @@ class MyLinkedListTest {
         MyNode actual = list.head;
         MyNode expected = list.get("f");
         Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    void isEmptyTest()
+    {
+        MyLinkedList list = new MyLinkedList("Manny");
+        list.add("Bob",3);
+        Assert.assertFalse(list.isEmpty());
+    }
+
+
+    @Test
+    void TestRemove()
+    {
+
+
+
     }
 
 
