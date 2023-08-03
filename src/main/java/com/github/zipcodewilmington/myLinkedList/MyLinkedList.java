@@ -1,11 +1,7 @@
 package com.github.zipcodewilmington.myLinkedList;
 
 public class MyLinkedList {
-
-
-
     MyNode head;
-
     public MyLinkedList(String key)
     {
         head = new MyNode(key,null);
@@ -29,7 +25,7 @@ public class MyLinkedList {
 
     public Integer size()
     {
-        Integer count = 1;
+        Integer count = 0;
         MyNode CurrentNode = head;
         while(CurrentNode.next!=null)
         {
@@ -38,6 +34,28 @@ public class MyLinkedList {
         }
         return count;
     }
+    public boolean isEmpty()
+    {
+        if (head.getNext()==null)return true; else return false;
+    }
+
+    public MyNode get(String key)
+    {
+    MyNode CurrentNode = head;
+        while(CurrentNode!=null)
+        {
+            if(CurrentNode.getData().getKey().equals(key))
+            {
+                return CurrentNode;
+            }
+            CurrentNode = CurrentNode.getNext();
+        }
+        return null;
+    }
+
+
+
+
 
 
 }

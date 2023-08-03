@@ -21,7 +21,7 @@ class MyLinkedListTest {
     {
         MyLinkedList list = new MyLinkedList("a");
         list.add("b",3);
-        Integer expected = 2;
+        Integer expected = 1;
         Integer actual = list.size();
         Assert.assertEquals(expected,actual);
     }
@@ -42,10 +42,22 @@ class MyLinkedListTest {
         list.add("b",3);
 
 
-        Integer expected = 10;
+        Integer expected = 9;
         Integer actual = list.size();
         Assert.assertEquals(expected,actual);
     }
+
+
+    @Test
+    void testget()
+    {
+        MyLinkedList list = new MyLinkedList("f");
+        MyNode actual = list.head;
+        MyNode expected = list.get("f");
+        Assert.assertEquals(expected,actual);
+    }
+
+
 
 
 }
